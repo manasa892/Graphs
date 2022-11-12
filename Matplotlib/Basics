@@ -21,5 +21,136 @@ plt.plot(time, costs)
 
 plt.show()
 
+3.Linestyles
+import codecademylib
+from matplotlib import pyplot as plt
+
+time = [0, 1, 2, 3, 4]
+revenue = [200, 400, 650, 800, 850]
+costs = [150, 500, 550, 550, 560]
+
+plt.plot(time, revenue, color = 'purple', linestyle = '--')
+
+#plt.show()
+
+plt.plot(time, costs, color = '#82edc9', marker = 's')
+
+plt.show()
+
+4.Axis and Labels
+import codecademylib
+from matplotlib import pyplot as plt
+
+x = range(12)
+y = [3000, 3005, 3010, 2900, 2950, 3050, 3000, 3100, 2980, 2980, 2920, 3010]
+plt.plot(x,y)
+plt.axis([0,12,2900,3100])
+plt.show()
+
+5.Labelling the Axes
+import codecademylib
+from matplotlib import pyplot as plt
+
+x = range(12)
+y = [3000, 3005, 3010, 2900, 2950, 3050, 3000, 3100, 2980, 2980, 2920, 3010]
+plt.plot(x, y)
+plt.axis([0, 12, 2900, 3100])
+plt.xlabel('Time')
+plt.ylabel('Dollars spent on coffee')
+plt.title('My Last Twelve Years of Coffee Drinking')
+
+plt.show()
+
+6.Subplots
+#We can create subplots using .subplot()
+#The command plt.subplot() needs three arguments to be passed into it:
+#(1)The number of rows of subplots (2)The numbers of columns of subplots (3)The index of the subplot we want to create
+#Any plt.plot() that comes after plt.subplot() will create a line plot in the specified subplot. For instance:
+import codecademylib
+from matplotlib import pyplot as plt
+
+months = range(12)
+temperature = [36, 36, 39, 52, 61, 72, 77, 75, 68, 57, 48, 48]
+flights_to_hawaii = [1200, 1300, 1100, 1450, 850, 750, 400, 450, 400, 860, 990, 1000]
+
+#first subplot 01
+plt.subplot(1, 2, 1)
+plt.plot(months, temperature)
+
+#Second Subplot 02
+plt.subplot(1, 2, 2)
+plt.plot(temperature, flights_to_hawaii,"o")
+
+#print plots 
+plt.show()
+
+7.Subplots Part ||
+import codecademylib
+from matplotlib import pyplot as plt
+
+x = range(7)
+straight_line = [0, 1, 2, 3, 4, 5, 6]
+parabola = [0, 1, 4, 9, 16, 25, 36]
+cubic = [0, 1, 8, 27, 64, 125, 216]
+
+#First Subplot
+plt.subplot(2, 1, 1)
+plt.plot(x, straight_line)
+plt.show()
+
+#Second Subplot
+plt.subplot(2, 2, 3)
+plt.plot(x, parabola)
+plt.show()
+
+#Third Subplot
+plt.subplot(2, 2, 4)
+plt.plot(x, cubic)
+plt.show()
+
+plt.subplots_adjust(bottom = 0.2 , wspace=0.35)
+
+
+8.Legends 
+import codecademylib
+from matplotlib import pyplot as plt
+
+months = range(12)
+hyrule = [63, 65, 68, 70, 72, 72, 73, 74, 71, 70, 68, 64]
+kakariko = [52, 52, 53, 68, 73, 74, 74, 76, 71, 62, 58, 54]
+gerudo = [98, 99, 99, 100, 99, 100, 98, 101, 101, 97, 98, 99]
+
+plt.plot(months, hyrule, label = 'hyrule')
+plt.plot(months, kakariko, label = 'kakariko')
+plt.plot(months, gerudo, label = 'gerudo')
+
+#Create your legend here
+legend_labels = ["Hyrule", "Kakariko", "Gerudo Valley"]
+plt.legend(legend_labels, loc=8)
+plt.show()
+
+9.Modify Ticks
+import codecademylib
+from matplotlib import pyplot as plt
+
+month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep","Oct", "Nov", "Dec"]
+
+months = range(12)
+conversion = [0.05, 0.08, 0.18, 0.28, 0.4, 0.66, 0.74, 0.78, 0.8, 0.81, 0.85, 0.85]
+
+plt.xlabel("Months")
+plt.ylabel("Conversion")
+
+plt.plot(months, conversion)
+
+# Your work here
+ax = plt.subplot()
+ax.set_xticks(months)
+ax.set_xticklabels(month_names)
+ax.set_yticks([0.10, 0.25, 0.5, 0.75])
+ax.set_yticklabels(["10%", "25%", "50%", "75%"])
+plt.show()
+
+10. 
 
 
