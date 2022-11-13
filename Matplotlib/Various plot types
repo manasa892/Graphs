@@ -1,0 +1,80 @@
+1.Simple Bar Graph
+import matplotlib.pyplot as plt
+days_in_year = [88, 225, 365, 687, 4333, 10756, 30687, 60190, 90553]
+plt.bar(range(len(days_in_year)), days_in_year)
+plt.show()
+
+2. Simple Bar Chart ||
+import codecademylib
+from matplotlib import pyplot as plt
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+sales = [91, 76, 56, 66, 52, 27]
+
+plt.bar(range(len(sales)), sales)
+
+ai = plt.subplot()
+ai.set_xticks(range(len(drinks)))
+ai.set_xticklabel(drinks)
+
+plt.show()
+
+3. Side - By - Side Bars
+import codecademylib
+from matplotlib import pyplot as plt
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+sales1 = [91, 76, 56, 66, 52, 27]
+sales2 = [65, 82, 36, 68, 38, 40]
+
+#Paste the sales1 values code here
+n = 1
+t = 2
+d = 6
+w = 0.8
+store1_x = [t*element +w*n for element in range(d)]
+
+plt.bar(store1_x, sales1)
+
+#Paste the sales2 values code here
+n = 2
+t = 2
+d = 6
+w = 0.8
+store2_x = [t*element + w*n for element in range(d)]
+
+plt.bar(store2_x, sales2)
+
+plt.show()
+
+4. Stacked Bars  
+
+import codecademylib
+from matplotlib import pyplot as plt
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+a1 =  [91, 76, 56, 66, 52, 27]
+a2 = [65, 82, 36, 68, 38, 40]
+
+plt.bar(range(len(a1)), a1, al = 'Location 1')
+plt.bar(range(len(a2)), a2, bottom = a1, label = 'Location 2')
+plt.legend()
+
+plt.show()
+
+
+5. Error Bars
+import codecademylib
+from matplotlib import pyplot as plt
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+ounces_of_milk = [6, 9, 4, 0, 9, 0]
+error = [0.6, 0.9, 0.4, 0, 0.9, 0]
+
+# Plot the bar graph here
+#MatplotSip = plt.bar(range(len(error)), ounces_of_milk)
+MatplotSip = plt.bar(range(len(error)), ounces_of_milk,yerr=error, capsize = 5)
+
+plt.show()
+
+6. Fill Between 
