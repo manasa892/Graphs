@@ -14,3 +14,6 @@ print(assignment1)
 asn1_median = np.median(assignment1.grade)
 
 print(asn1_median)
+
+2.Aggregate Functions
+#sns.set() prints the default theme of the seaborn theme
