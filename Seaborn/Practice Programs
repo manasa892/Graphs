@@ -17,3 +17,177 @@ print(asn1_median)
 
 2.Aggregate Functions
 #sns.set() prints the default theme of the seaborn theme
+import codecademylib3_seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+gradebook = pd.read_csv('gradebook.csv')
+
+sns.barplot(data = gradebook, x = "assignment_name", y = "grade")
+
+plt.show()
+
+3. Calculating Different Aggregates
+import codecademylib3_seaborn
+import warnings
+warnings.filterwarnings('ignore')
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("survey.csv")
+
+print(df)
+
+sns.barplot(
+  data = df,
+  x = 'Gender',
+  y = 'Response',
+  estimator = np.median)
+
+plt.show()
+
+4. Aggregating by Multiple Columns
+import codecademylib3_seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("survey.csv")
+
+sns.barplot(data = df, 
+            hue = "Gender",
+            y = "Response",
+            x = "Age Range")
+
+plt.show()
+
+=======================================================================================================================================================================
+
+#Learn SEABORN DISTRIBUTIONS
+1. Bar Chart Hide Information
+import codecademylib3_seaborn
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+# Take in the data from the CSVs as NumPy arrays:
+set_one = np.genfromtxt("dataset1.csv", delimiter=",")
+set_two = np.genfromtxt("dataset2.csv", delimiter=",")
+set_three = np.genfromtxt("dataset3.csv", delimiter=",")
+set_four = np.genfromtxt("dataset4.csv", delimiter=",")
+
+# Creating a Pandas DataFrame:
+n=500
+df = pd.DataFrame({
+    "label": ["set_one"] * n + ["set_two"] * n + ["set_three"] * n + ["set_four"] * n,
+    "value": np.concatenate([set_one, set_two, set_three, set_four])
+})
+
+# Setting styles:
+sns.set_style("darkgrid")
+sns.set_palette("pastel")
+
+# Add your code below:
+sns.barplot(data = df, x = "label", y = "value")
+
+plt.show()
+
+
+2.KDE Plots, Part ||
+import codecademylib3_seaborn
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+# Take in the data from the CSVs as NumPy arrays:
+set_one = np.genfromtxt("dataset1.csv", delimiter=",")
+set_two = np.genfromtxt("dataset2.csv", delimiter=",")
+set_three = np.genfromtxt("dataset3.csv", delimiter=",")
+set_four = np.genfromtxt("dataset4.csv", delimiter=",")
+
+# Creating a Pandas DataFrame:
+n=500
+df = pd.DataFrame({
+    "label": ["set_one"] * n + ["set_two"] * n + ["set_three"] * n + ["set_four"] * n,
+    "value": np.concatenate([set_one, set_two, set_three, set_four])
+})
+
+# Setting styles:
+sns.set_style("darkgrid")
+sns.set_palette("pastel")
+
+# Add your code below:
+sns.kdeplot(set_one, shade = True)
+sns.kdeplot(set_two, shade = True)
+sns.kdeplot(set_three, shade = True)
+sns.kdeplot(set_four, shade = True)
+
+plt.show()
+
+
+3.Box Plots, Part ||
+import codecademylib3_seaborn
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+# Take in the data from the CSVs as NumPy arrays:
+set_one = np.genfromtxt("dataset1.csv", delimiter=",")
+set_two = np.genfromtxt("dataset2.csv", delimiter=",")
+set_three = np.genfromtxt("dataset3.csv", delimiter=",")
+set_four = np.genfromtxt("dataset4.csv", delimiter=",")
+
+# Creating a Pandas DataFrame:
+n=500
+df = pd.DataFrame({
+    "label": ["set_one"] * n + ["set_two"] * n + ["set_three"] * n + ["set_four"] * n,
+    "value": np.concatenate([set_one, set_two, set_three, set_four])
+})
+
+# Setting styles:
+sns.set_style("darkgrid")
+sns.set_palette("pastel")
+
+# Add your code below:
+sns.boxplot(data = df, x = 'label', y = 'value')
+
+plt.show()
+
+
+4.Violin Plots, Part ||
+import codecademylib3_seaborn
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+# Take in the data from the CSVs as NumPy arrays:
+set_one = np.genfromtxt("dataset1.csv", delimiter=",")
+set_two = np.genfromtxt("dataset2.csv", delimiter=",")
+set_three = np.genfromtxt("dataset3.csv", delimiter=",")
+set_four = np.genfromtxt("dataset4.csv", delimiter=",")
+
+# Creating a Pandas DataFrame:
+n=500
+df = pd.DataFrame({
+    "label": ["set_one"] * n + ["set_two"] * n + ["set_three"] * n + ["set_four"] * n,
+    "value": np.concatenate([set_one, set_two, set_three, set_four])
+})
+
+# Setting styles:
+sns.set_style("darkgrid")
+sns.set_palette("pastel")
+
+# Add your code below:
+sns.violinplot(data = df, x='label', y = 'value')
+plt.show()
+
+
+
+
