@@ -81,7 +81,6 @@ plt.show()
 
 6. Fill Between - Fill the area between two horizontal curves.The curves are defined by the points (x, y1) and (x, y2).
 #This creates one or multiple polygons describing the filled area.
-#Sn :
 import codecademylib
 from matplotlib import pyplot as plt
 
