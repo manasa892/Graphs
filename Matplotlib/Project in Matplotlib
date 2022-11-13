@@ -21,3 +21,5 @@ plt.ylabel("Test average")
 plt.savefig("my_bar_chart.png")
 
 plt.show()
+
+2.
